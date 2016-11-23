@@ -1,0 +1,59 @@
+﻿t11                                                          The SAS System                         13:33 Wednesday, November 23, 2016
+t 
+s 1          ;*';*";*/;quit;run;
+s 2          OPTIONS PAGENO=MIN;
+s 3          %LET SYSLAST=SASHELP.'CARS'n;
+s 4          %LET _CLIENTTASKLABEL='Program';
+s 5          %LET _CLIENTPROCESSFLOWNAME='Process Flow';
+s 6          %LET _CLIENTPROJECTPATH='C:\Users\drespc1\Desktop\Eg github\CarsExample.egp';
+s 7          %LET _CLIENTPROJECTNAME='CarsExample.egp';
+s 8          %LET _SASPROGRAMFILE=;
+s 9          
+s 10         ODS _ALL_ CLOSE;
+s 11         OPTIONS DEV=ACTIVEX;
+s 12         GOPTIONS XPIXELS=0 YPIXELS=0;
+s 13         FILENAME EGSR TEMP;
+s 14         ODS tagsets.sasreport13(ID=EGSR) FILE=EGSR
+s 15             STYLE=HtmlBlue
+s 16             STYLESHEET=(URL="file:///C:/Program%20Files/SASHome/SAS9.4/SASEnterpriseGuide/7.1/Styles/HtmlBlue.css")
+s 17             NOGTITLE
+s 18             NOGFOOTNOTE
+s 19             GPATH=&sasworklocation
+d SYMBOLGEN:  Macro variable SASWORKLOCATION resolves to "C:\Users\drespc1\AppData\Local\Temp\SAS Temporary 
+d             Files\_TD6268_WSCOC4837_\Prc2/"
+s 20             ENCODING=UTF8
+s 21             options(rolap="on")
+s 22         ;
+n NOTE: Writing TAGSETS.SASREPORT13(EGSR) Body file: EGSR
+s 23         
+s 24         GOPTIONS ACCESSIBLE;
+s 25           data cars;
+d SYMBOLGEN:  Macro variable SYSLAST resolves to SASHELP.CARS                            
+s 26             set &SysLast;
+s 27             length Name_concat $70;
+s 28             Name_concat=catx(" - ", Make, Model, Type);
+s 29           run;
+n 
+n NOTE: There were 428 observations read from the data set SASHELP.CARS.
+n NOTE: The data set WORK.CARS has 428 observations and 16 variables.
+n NOTE: Compressing data set WORK.CARS decreased size by 0.00 percent. 
+n       Compressed is 2 pages; un-compressed would require 2 pages.
+n NOTE: DATA statement used (Total process time):
+n       real time           0.07 seconds
+n       cpu time            0.01 seconds
+n       
+n 
+s 30         
+s 31         GOPTIONS NOACCESSIBLE;
+s 32         %LET _CLIENTTASKLABEL=;
+s 33         %LET _CLIENTPROCESSFLOWNAME=;
+s 34         %LET _CLIENTPROJECTPATH=;
+s 35         %LET _CLIENTPROJECTNAME=;
+s 36         %LET _SASPROGRAMFILE=;
+s 37         
+s 38         ;*';*";*/;quit;run;
+s 39         ODS _ALL_ CLOSE;
+s 40         
+s 41         
+s 42         QUIT; RUN;
+s 43         
