@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Task name="Summary Tables" ver="4.3.0.0" asm="SAS.EG.Tasks.Describe, Version=7.100.2.0, Culture=neutral, PublicKeyToken=be58efc3b934219b">
+<VariableCollection name="State_ADataVars">
+<Variable name="Make" altN="" cls="DatasetColumn" />
+<Variable name="Model" altN="" cls="DatasetColumn" />
+<Variable name="Type" altN="" cls="DatasetColumn" />
+<Variable name="Origin" altN="" cls="DatasetColumn" />
+<Variable name="DriveTrain" altN="" cls="DatasetColumn" />
+<Variable name="MSRP" altN="" cls="DatasetColumn" />
+<Variable name="Invoice" altN="" cls="DatasetColumn" />
+<Variable name="EngineSize" altN="" cls="DatasetColumn" />
+<Variable name="Cylinders" altN="" cls="DatasetColumn" />
+<Variable name="Horsepower" altN="" cls="DatasetColumn" />
+<Variable name="MPG_City" altN="" cls="DatasetColumn" />
+<Variable name="MPG_Highway" altN="" cls="DatasetColumn" />
+<Variable name="Weight" altN="" cls="DatasetColumn" />
+<Variable name="Wheelbase" altN="" cls="DatasetColumn" />
+<Variable name="Length" altN="" cls="DatasetColumn" />
+</VariableCollection>
+<PropertyCollection name="State_Props">
+<PropertyTabMo name="TabMo" ns="...SummaryTables" asm="...Describe" tblStmt="/* Row Dimension */&#xD;&#xA;Make &#xD;&#xA;Make*&#xD;&#xA;  Model,&#xD;&#xA;/* Column Dimension */&#xD;&#xA;N" />
+<PropertyBool name="outds" val="true" />
+<PropertyBool name="PropNumericVarsInActiveData" val="true" />
+<PropertyNull name="PropAnalysisVarLabelsLabel" cond="true" />
+<PropertyOptionList name="PropAnalysisVarLabels" cond="true">
+<OptionsCollection>
+<Option name="COLUMN" cond="true" />
+<Option name="ROW" cond="true" />
+<Option name="PAGE" cond="true" />
+<Option name="HIDDEN" cond="true" />
+</OptionsCollection>
+</PropertyOptionList>
+<PropertyCodeFragment name="outputCode" cond="true">
+<CodeFragmentCollection name="obj4x2_135" cond="true">
+<CodeFragment name="obj4x2_137" idx="0" cond="true" />
+</CodeFragmentCollection>
+</PropertyCodeFragment>
+</PropertyCollection>
+<RoleCollection name="State_Roles">
+<Role name="RoleVAR" minVars="0" />
+<Role name="RoleCLASS" minVars="0">
+<RoleVariableCollection name="VariableCollection">
+<Var name="Make" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
+<Var name="Model" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
+</RoleVariableCollection>
+<VariablePropertiesCollection>
+<VariableProperty name="MAKE" propN="RoleCLASS_Props" propT="...SummaryTables.ClassRoleVariableProperties" propAsm="...Describe">
+<ClassRoleVariableProperties name="RoleCLASS_Props" ns="...SummaryTables" asm="...Describe" ccBsNm="CC_ClassRoleVariableProperties_RoleCLASS_Props">
+<PropertyGroup name="ClassLevel">
+<DescRsrc lit="Class level &quot;Make&quot;" />
+<PropertyBool name="PreLoadFmt" cond="false" />
+</PropertyGroup>
+</ClassRoleVariableProperties>
+</VariableProperty>
+<VariableProperty name="MODEL" propN="RoleCLASS_Props" propT="...SummaryTables.ClassRoleVariableProperties" propAsm="...Describe">
+<ClassRoleVariableProperties name="RoleCLASS_Props" ns="...SummaryTables" asm="...Describe" ccBsNm="CC_ClassRoleVariableProperties_RoleCLASS_Props">
+<PropertyGroup name="ClassLevel">
+<DescRsrc lit="Class level &quot;Model&quot;" />
+<PropertyBool name="PreLoadFmt" cond="false" />
+</PropertyGroup>
+</ClassRoleVariableProperties>
+</VariableProperty>
+</VariablePropertiesCollection>
+</Role>
+<Role name="RoleRow" cond="false">
+<RoleVariableCollection name="VariableCollection" cond="false" />
+</Role>
+<Role name="RoleColumn" cond="false">
+<RoleVariableCollection name="VariableCollection" cond="false" />
+</Role>
+</RoleCollection>
+<DatasetCollection name="State_OutD">
+<Dataset name="out" cond="true" autoN="false" libRef="WORK" libNm="WORK" mbr="STABSummaryTables" mbrVld="false" rootN="STABSummaryTablesCARS" dataType="OutputPersisted">
+<DescRsrc key="OutDS.Description" />
+</Dataset>
+</DatasetCollection>
+<DatasetCollection name="State_InD">
+<Dataset name="ActiveData" libRef="SASHELP" libNm="SASHELP" mbr="CARS" mbrVld="false" dataType="Input" />
+</DatasetCollection>
+<Resources>
+<RsrcMan base="SAS.EG.Tasks.Describe.summarytables.Translate" asm="SAS.EG.Tasks.Describe.dll" sn="0" />
+<RsrcMan base="SAS.EG.Tasks.TaskSDK.Translate" asm="SAS.EG.Tasks.TaskSDK.dll" sn="2" />
+</Resources>
+</Task>
