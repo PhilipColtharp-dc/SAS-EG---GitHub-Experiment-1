@@ -18,7 +18,7 @@
 <Variable name="Length" altN="" cls="DatasetColumn" />
 </VariableCollection>
 <PropertyCollection name="State_Props">
-<PropertyTabMo name="TabMo" ns="...SummaryTables" asm="...Describe" tblStmt="/* Row Dimension */&#xD;&#xA;Make &#xD;&#xA;Make*&#xD;&#xA;  Model,&#xD;&#xA;/* Column Dimension */&#xD;&#xA;N" />
+<PropertyTabMo name="TabMo" ns="...SummaryTables" asm="...Describe" tblStmt="/* Row Dimension */&#xD;&#xA;Make &#xD;&#xA;Make*&#xD;&#xA;  Model &#xD;&#xA;Origin &#xD;&#xA;DriveTrain,&#xD;&#xA;/* Column Dimension */&#xD;&#xA;N" />
 <PropertyBool name="outds" val="true" />
 <PropertyBool name="PropNumericVarsInActiveData" val="true" />
 <PropertyNull name="PropAnalysisVarLabelsLabel" cond="true" />
@@ -42,6 +42,8 @@
 <RoleVariableCollection name="VariableCollection">
 <Var name="Make" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
 <Var name="Model" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
+<Var name="Origin" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
+<Var name="DriveTrain" lbl="" fmt="" inFmt="" cls="DatasetColumn" />
 </RoleVariableCollection>
 <VariablePropertiesCollection>
 <VariableProperty name="MAKE" propN="RoleCLASS_Props" propT="...SummaryTables.ClassRoleVariableProperties" propAsm="...Describe">
@@ -56,6 +58,22 @@
 <ClassRoleVariableProperties name="RoleCLASS_Props" ns="...SummaryTables" asm="...Describe" ccBsNm="CC_ClassRoleVariableProperties_RoleCLASS_Props">
 <PropertyGroup name="ClassLevel">
 <DescRsrc lit="Class level &quot;Model&quot;" />
+<PropertyBool name="PreLoadFmt" cond="false" />
+</PropertyGroup>
+</ClassRoleVariableProperties>
+</VariableProperty>
+<VariableProperty name="ORIGIN" propN="RoleCLASS_Props" propT="...SummaryTables.ClassRoleVariableProperties" propAsm="...Describe">
+<ClassRoleVariableProperties name="RoleCLASS_Props" ns="...SummaryTables" asm="...Describe" ccBsNm="CC_ClassRoleVariableProperties_RoleCLASS_Props">
+<PropertyGroup name="ClassLevel">
+<DescRsrc lit="Class level &quot;Origin&quot;" />
+<PropertyBool name="PreLoadFmt" cond="false" />
+</PropertyGroup>
+</ClassRoleVariableProperties>
+</VariableProperty>
+<VariableProperty name="DRIVETRAIN" propN="RoleCLASS_Props" propT="...SummaryTables.ClassRoleVariableProperties" propAsm="...Describe">
+<ClassRoleVariableProperties name="RoleCLASS_Props" ns="...SummaryTables" asm="...Describe" ccBsNm="CC_ClassRoleVariableProperties_RoleCLASS_Props">
+<PropertyGroup name="ClassLevel">
+<DescRsrc lit="Class level &quot;DriveTrain&quot;" />
 <PropertyBool name="PreLoadFmt" cond="false" />
 </PropertyGroup>
 </ClassRoleVariableProperties>
